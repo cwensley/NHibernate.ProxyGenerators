@@ -89,6 +89,12 @@ namespace NHibernate.ProxyGenerators.Default
 			foreach (var cls in nhibernateConfiguration.ClassMappings)
 			{
 				references.Add(cls.MappedClass.Assembly);
+				foreach (var mapReferenceAssemblyName in cls.MappedClass.Assembly.GetReferencedAssemblies())
+				{
+					var mapReferenceAssembly = Assembly.Load(mapReferenceAssemblyName);
+					references.Add(mapReferenceAssembly);
+				}
+
 			}
 
 			foreach (var assembly in references)
@@ -110,6 +116,27 @@ namespace NHibernate.ProxyGenerators.Default
 			{
 				nhibernateConfiguration.AddAssembly(inputAssembly);
 			}
+
+			FluentNHibernate.Cfg.Fluently.Configure(nhibernateConfiguration)
+			.Mappings(cfg =>
+			{
+				foreach (var assembly in inputAssemblies)
+				{
+					var fluent = cfg.FluentMappings.AddFromAssembly(assembly);
+					if (options.FluentConventions != null)
+					{
+						foreach (var conventionName in options.FluentConventions)
+						{
+							var t = System.Type.GetType(conventionName);
+							var convention = (FluentNHibernate.Conventions.IConvention)Activator.CreateInstance(t);
+							fluent.Conventions.Add(convention);
+
+						}
+					}
+				}
+			}).BuildConfiguration();
+
+
 
 			return nhibernateConfiguration;
 		}
