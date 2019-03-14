@@ -233,15 +233,18 @@ namespace NHibernate.ProxyGenerators.Default
 			{
 				Console.WriteLine(referenceAssembly);
 			}
-			var merger = new ILRepack();
+			var options = new RepackOptions();
 
 			var searchDirectories = referenceAssemblies.Select(a => Path.GetDirectoryName(a.Location))
 				.Distinct()
 				.ToArray();
-			merger.SetSearchDirectories(searchDirectories);
-			merger.SetInputAssemblies(new[] {staticProxyAssembly.Location, proxyAssembly.Location});
-			merger.OutputFile = outputPath;
-			merger.Merge();
+			options.SearchDirectories = searchDirectories;
+			options.InputAssemblies = new[] {staticProxyAssembly.Location, proxyAssembly.Location};
+			options.OutputFile = outputPath;
+
+
+			var merger = new ILRepack(options);
+			merger.Repack();
 		}
 
 		static string BuildProxyTable(IEnumerable<KeyValuePair<string, System.Type>> proxies)

@@ -46,7 +46,14 @@ namespace NHibernate.ProxyGenerators
 
 		private void Run()
 		{
-			callback(args);
+			try
+			{
+				callback(args);
+			}
+			catch (Exception ex)
+			{
+				throw new InvalidOperationException(ex.ToString());
+			}
 		}
 	}
 }
