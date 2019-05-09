@@ -67,7 +67,7 @@ namespace NHibernate.ProxyGenerators.Default
 				{
 					OutputAssembly = outputAssembly,
 					WarningLevel = 4,
-					TreatWarningsAsErrors = true,
+					//TreatWarningsAsErrors = true,
 					CompilerOptions = "/debug:pdbonly /optimize+"
 				};
 
