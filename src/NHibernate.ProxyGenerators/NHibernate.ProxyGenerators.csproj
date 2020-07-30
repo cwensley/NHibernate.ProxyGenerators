@@ -67,12 +67,12 @@
     <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\source\packages\Iesi.Collections.4.0.4\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="ILRepack, Version=2.0.16.0, Culture=neutral, PublicKeyToken=c3e9373f1c31208e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\packages\ILRepack.Lib.2.0.16\lib\net40\ILRepack.dll</HintPath>
+    <Reference Include="ILRepack, Version=2.0.18.0, Culture=neutral, PublicKeyToken=c3e9373f1c31208e, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\source\packages\ILRepack.Lib.2.0.18\lib\net40\ILRepack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NHibernate, Version=5.2.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\packages\NHibernate.5.2.5\lib\net461\NHibernate.dll</HintPath>
+      <HintPath>..\..\..\..\source\packages\NHibernate.5.2.6\lib\net461\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\source\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
