@@ -2,16 +2,16 @@
   <PropertyGroup>
     <RootNamespace>NHibernate.ProxyGenerators</RootNamespace>
     <AssemblyName>NHibernate.ProxyGenerators</AssemblyName>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Antlr3.Runtime" Version="3.5.1" />
     <PackageReference Include="FluentNHibernate" Version="3.4.0" />
-    <PackageReference Include="Iesi.Collections" Version="4.0.4" />
-    <PackageReference Include="ILRepack.Lib" Version="2.0.18" />
+    <PackageReference Include="Iesi.Collections" Version="4.1.1" />
     <PackageReference Include="NHibernate" Version="5.5.2" />
+    <PackageReference Include="ILRepack.Lib" Version="2.0.34" />
     <PackageReference Include="Remotion.Linq" Version="2.2.0" />
     <PackageReference Include="Remotion.Linq.EagerFetching" Version="2.2.0" />
     <Reference Include="System" />
